@@ -1,0 +1,8 @@
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Calling occupants");
+});
+
+app.listen(8000);
