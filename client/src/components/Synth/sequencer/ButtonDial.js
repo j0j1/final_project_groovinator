@@ -4,7 +4,7 @@ import { useState } from "react";
 const ButtonDial = ({setSequenceTrigger, sequence, currentStep}) => {
     const [localOctave, setLocalOctave] = useState([3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]);
     const degree = 360/12;
-    const triColor = ['violet', 'blue', 'green', 'yellow', 'orange', 'red', 'pink', 'hot-pink'];
+    const triColor = ['#b370f7', '#2193dd', '#13e776', '#c6fc63', '#f7f676', '#ffd980', '#ffa5a5', '#ffafe8'];
     const handleOctave = (e, step, num) => {
         e.preventDefault();
         console.log(localOctave[step])
@@ -18,6 +18,7 @@ const ButtonDial = ({setSequenceTrigger, sequence, currentStep}) => {
         if (localOctave[step]===9){
             setLocalOctave(localOctave, localOctave[step]=8)
         }
+        setSequenceTrigger(step, "dont", localOctave[step])
     }
 
     const handleClick = (e,j) => {

@@ -35,7 +35,10 @@ const Sequencer = ({playTone, setStopNote, oscList1, oscList2}) => {
         console.log(octave)
         // const note = value*12+octave*12;
         // console.log(note)
-        if (sequenceCopy[step].note === value){
+        if (value==="dont"){
+            sequenceCopy[step].octave = octave
+        }
+        else if (sequenceCopy[step].note === value){
             sequence[step].active = !sequence[step].active;
         } 
         else {
